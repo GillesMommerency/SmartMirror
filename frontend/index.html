@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Smartmirror</title>
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="icon" href="images/icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/script.js"></script>
+  </head>
+  <body>
+      <header class="o-row o-row--dark">
+          <div class="o-container">
+              <div class="c-header">
+                  <div class="c-header__logo">
+                      <h1 class="c-logo">
+                          <img src="images/logo.png" class="c-logo__symbol">
+                              
+                        </h1>
+              </div>
+      <div class="c-header__nav p">
+          <nav class="c-nav">
+              <ul class="o-list c-nav__list">
+                  <li class="c-nav__item"><a href="index.html" class="c-nav__link">Home</a></li>
+                  <li class="c-nav__item"><a href="metingen.html" class="c-nav__link">Metingen</a></li>
+                  <li class="c-nav__item"><a href="licht.html" class="c-nav__link">Verlichting</a></li>
+              </ul>
+          </nav>
+        
+      </div>
+      <div id="menuToggle">
+     
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a class="c-nav__link" href="index.html"><li>Home</li></a>
+          <a class="c-nav__link" href="metingen.html"><li>Metingen</li></a>
+          <a class="c-nav__link" href="licht.html"><li>Licht</li></a>
+        </ul>
+      </div>
+  </div>
+</div>
+      </header>
+
+
+
+
+  <div class="title">
+    <h1>Home</h1>
+    <h2>Hieronder zie je de real-time waardes van de sensoren van de Smartmirror.<h2>
+  </div>
+<div class="row">
+    <div class="container column">
+      <img class="icon" src="images/684641_tools_512x512.png">
+      <div class="dataholder">
+        <h3>Temperatuur</h3> <p class="dataTemp">Loading...</p>
+         <p class="text">Meet de temperatuursensor.</p>
+      </div>
+    </div>
+    <div class="container column">
+        <img class="icon" src="images/small-clock-icon-19.jpg">
+        <div class="dataholder">
+            <h3>Tijd </h3> <p class="dataTijd">Loading..</p>
+            <p class="text">Is het momenteel in België.</p>
+        </div>
+      </div>
+      <div class="container column">
+          <img class="icon" src="images/684486_weather_512x512.png">
+          <div class="dataholder">
+              <h3>Luchtvochtigheid</h3> <p class="dataLucht">Loading..</p>
+              <p class="text">Meet de luchtvochtigheidssensor.</p>
+          </div>
+        </div>
+      </div>
+    <div class="button">
+        Refresh
+      </div>
+    
+  </body>
+</html>

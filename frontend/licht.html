@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SmartMirror</title>
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="icon" href="images/icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+    <script src="script/verlichting.js"></script>
+  </head>
+  <body>
+      <header class="o-row o-row--dark">
+          <div class="o-container">
+              <div class="c-header">
+                  <div class="c-header__logo">
+                      <h1 class="c-logo">
+                          <img src="images/logo.png" class="c-logo__symbol">
+                              
+                        </h1>
+              </div>
+      <div class="c-header__nav p">
+          <nav class="c-nav">
+              <ul class="o-list c-nav__list">
+                  <li class="c-nav__item"><a href="index.html" class="c-nav__link">Home</a></li>
+                  <li class="c-nav__item"><a href="metingen.html" class="c-nav__link">Metingen</a></li>
+                  <li class="c-nav__item"><a href="licht.html" class="c-nav__link">Verlichting</a></li>
+              </ul>
+          </nav>
+      </div>
+      <div id="menuToggle">
+     
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+          <a class="c-nav__link" href="index.html"><li>Home</li></a>
+          <a class="c-nav__link" href="metingen.html"><li>Metingen</li></a>
+          <a class="c-nav__link" href="licht.html"><li>Licht</li></a>
+        </ul>
+      </div>
+  </div>
+</div>
+      </header>
+
+
+
+
+      <div class="title">
+          <h1>Verlichting</h1>
+        </div>
+    <div class="voorlopig">
+        
+            <div class="fancy-bulb">
+                    <div class="left-streaks streaks"></div>
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 275.3 413.3" enable-background="new 0 0 275.3 413.3" xml:space="preserve">
+                      <g id="off">
+                        <path
+                          fill="#E2ECF1"
+                          d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                          c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"
+                        />
+                      </g>
+                      <g id="on">
+                        <path id='vulling'
+                          fill="#FFDB55"
+                          d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8
+                          c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"
+                        />
+                      </g>
+            
+                      <g id="outline">
+                        <path
+                          fill="#F1F2F2"
+                          stroke="#38434A"
+                          stroke-width="19.1022"
+                          stroke-miterlimit="10"
+                          d="M168.5,375.5h-61.7c-8.9,0-16-7.2-16-16
+                          v-55.8h93.8v55.8C184.6,368.3,177.4,375.5,168.5,375.5z"
+                        />
+                        <path
+                          fill="#F1F2F2"
+                          stroke="#38434A"
+                          stroke-width="19.1022"
+                          stroke-miterlimit="10"
+                          d="M151.2,401.5h-27.1c-3.9,0-7-3.2-7-7v-19
+                          h41.1v19C158.2,398.4,155.1,401.5,151.2,401.5z"
+                        />
+                        <line fill="none" stroke="#38434A" stroke-width="19.1022" stroke-miterlimit="10" x1="184.6" y1="339.6" x2="90.8" y2="339.6" />
+                        <path
+                          fill="none"
+                          stroke="#38434A"
+                          stroke-width="19.1022"
+                          stroke-miterlimit="10"
+                          d="M137.7,13.7C67.2,13.7,10,70.9,10,141.4
+                          c0,58.3,72.8,118.2,79.9,162.3h47.8h47.8c7.1-44,79.9-103.9,79.9-162.3C265.3,70.9,208.2,13.7,137.7,13.7z"
+                        />
+                      </g>
+                      <g id="highlight">
+                        <path
+                          fill="#FFDB55"
+                          stroke="#FFFFFF"
+                          stroke-width="21.0124"
+                          stroke-linecap="round"
+                          stroke-miterlimit="10"
+                          d="M207.1,89.5
+                          c-12.3-16.1-28.4-29.1-46.9-37.8"
+                        />
+                        <path
+                          fill="#FFDB55"
+                          stroke="#FFFFFF"
+                          stroke-width="21.0124"
+                          stroke-linecap="round"
+                          stroke-miterlimit="10"
+                          d="M225,121.4
+                          c-0.8-2.2-1.8-4.4-2.7-6.5"
+                        />
+                      </g>
+                    </svg>
+                    <div class="right-streaks streaks"></div>
+                    <div class="input-color" style="text-align: center">
+                      <h2>Kies een kleur:</h2>
+                    <input id="kleur1" type="color" name="favcolor" value="#FFDB55">
+                </div>
+                  </div>
+                  
+      <div class="button">
+        Versturen
+      </div>
+      
+    </div>
+    
+  </body>
+</html>
